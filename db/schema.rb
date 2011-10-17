@@ -11,7 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111017141114) do
+ActiveRecord::Schema.define(:version => 20111017141409) do
+
+  create_table "location_types", :force => true do |t|
+    t.integer  "tagging_id"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "location_types", ["tagging_id"], :name => "index_location_types_on_tagging_id"
 
   create_table "tags", :force => true do |t|
     t.integer  "tagging_id"
