@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111017141532) do
+ActiveRecord::Schema.define(:version => 20111017142120) do
 
   create_table "location_types", :force => true do |t|
     t.integer  "tagging_id"
@@ -21,6 +21,23 @@ ActiveRecord::Schema.define(:version => 20111017141532) do
   end
 
   add_index "location_types", ["tagging_id"], :name => "index_location_types_on_tagging_id"
+
+  create_table "locations", :force => true do |t|
+    t.integer  "location_type_id"
+    t.string   "lat"
+    t.string   "long"
+    t.string   "close_mon"
+    t.string   "close_tue"
+    t.string   "close_wed"
+    t.string   "close_thu"
+    t.string   "close_fri"
+    t.string   "close_sat"
+    t.string   "close_sun"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "locations", ["location_type_id"], :name => "index_locations_on_location_type_id"
 
   create_table "taggings", :force => true do |t|
     t.integer  "location_type_id"
