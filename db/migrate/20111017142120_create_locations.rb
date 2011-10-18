@@ -2,8 +2,8 @@ class CreateLocations < ActiveRecord::Migration
   def change
     create_table :locations do |t|
       t.references :location_type
-      t.string :lat
-      t.string :long
+      t.float :lat
+      t.float :long
       t.string :close_mon
       t.string :close_tue
       t.string :close_wed

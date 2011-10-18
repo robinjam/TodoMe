@@ -11,21 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111017142555) do
+ActiveRecord::Schema.define(:version => 20111017142120) do
 
   create_table "location_types", :force => true do |t|
-    t.integer  "tagging_id"
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "location_types", ["tagging_id"], :name => "index_location_types_on_tagging_id"
-
   create_table "locations", :force => true do |t|
     t.integer  "location_type_id"
-    t.string   "lat"
-    t.string   "long"
+    t.float    "lat"
+    t.float    "long"
     t.string   "close_mon"
     t.string   "close_tue"
     t.string   "close_wed"
@@ -35,7 +32,6 @@ ActiveRecord::Schema.define(:version => 20111017142555) do
     t.string   "close_sun"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "address"
   end
 
   add_index "locations", ["location_type_id"], :name => "index_locations_on_location_type_id"
@@ -51,12 +47,9 @@ ActiveRecord::Schema.define(:version => 20111017142555) do
   add_index "taggings", ["tag_id"], :name => "index_taggings_on_tag_id"
 
   create_table "tags", :force => true do |t|
-    t.integer  "tagging_id"
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "tags", ["tagging_id"], :name => "index_tags_on_tagging_id"
 
 end
