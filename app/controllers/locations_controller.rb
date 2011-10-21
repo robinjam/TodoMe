@@ -1,10 +1,12 @@
 class LocationsController < ApplicationController
   def index
-    location_type = LocationType.find_by_name(params[:type])
-    unless location_type.nil?
-      nearbys = location_type.locations.includes([:location_type]).near([params[:lat].to_f, params[:long].to_f], params[:radius].to_f, order: "distance", limit: 10)
-    else
+    radius = params[:radius].to_f
+    radius = 10 unless radius <= 10
+    if params[:type].nil?
       nearbys = Location.includes([:location_type]).near([params[:lat].to_f, params[:long].to_f], params[:radius].to_f, order: "distance", limit: 10)
+    else
+      location_type = LocationType.find_by_name(params[:type])
+      nearbys = location_type.nil? ? [] : location_type.locations.includes([:location_type]).near([params[:lat].to_f, params[:long].to_f], radius, order: "distance", limit: 10)
     end
     
     respond_to do |format|
