@@ -1,241 +1,213 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Ruby on Rails: Welcome aboard</title>
-    <style type="text/css" media="screen">
-      body {
-        margin: 0;
-        margin-bottom: 25px;
-        padding: 0;
-        background-color: #f0f0f0;
-        font-family: "Lucida Grande", "Bitstream Vera Sans", "Verdana";
-        font-size: 13px;
-        color: #333;
-      }
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link href='http://fonts.googleapis.com/css?family=Antic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Gloria+Hallelujah' rel='stylesheet' type='text/css'>
+<script type="text/javascript" src=" https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>ToDoMe - Tagline</title>
+<script type="text/javascript">
+function resize() {
+if($(window).height() > 782) {
+	$("#footer").css("height", (document.documentElement.clientHeight - 753) + "px");
+} else {
+	$("#footer").css("height", "39px");
+} 
+}
+</script>
+<style type="text/css">
+a {
+	text-decoration:none;
+	color: #FDFDFD;
+		
+}
+a:hover {
+	color:#b1cc47;
+}
+body {
+	margin:0px;
+	padding:0px;
+	background: url(images/bg-wood.jpg);
+	font-family: 'Antic', sans-serif;
+}
+#header-bg {
+	background:url(images/header-bg.png) repeat-x;
+	height: 119px;
+}
+#header {
+	padding-left:50px;
+	color:#FFF;
+	margin: 0 auto;
+	width: 931px;
+	height:118px;
+	background:url(images/logo.png) no-repeat center;
+}
+#header h1{
+	margin:0;
+	padding:15px 0 0 0;
+	font-size:58px;
+	
+}
+#wrapper {
+	height: 602px;
+}
+#header .active {
+	color:#b1cc47;
+}
+#right {
+	background: url(images/mess.png) bottom no-repeat;
+	width:510px;
+	height: 602px;
+	float:left;
+}
+#left {
+	background: url(images/paper.png) no-repeat;
+	width:409px; 
+	height:578px;
+	float:left;
+	font-family: 'Gloria Hallelujah', cursive;
+}
+#left h1{
+	margin-left:30px;
+	margin-top:39px;
+	margin-bottom:28px;
+	color:#dc0000;
+}
+#left ol{
+	text-align:left;
+	margin-left:25px;
+	color:#dc0000;
+}
+#left li{
+	color:#000;
+	padding:0;
+	margin: 0 0 20px 0;
+	line-height: 1em;
+}
+#pen {
+	float:left;
+	background: url(images/pen.png) no-repeat;
+	width:50px;
+	height: 361px;
+	margin-left:-20px;
+	margin-top:100px;
+}
+#bar {
+	height:20px;
+	font-size: 0.6em;
+	background:#000;
+	border-top: 2px #2D0C02 solid;
+	color:#FFF;
+	text-align:right;
+}
+#footer {
+	background:#1e1b16;
+	height:39px;
+	padding-top: 10px;
+	color:#b1cc47;
+	text-align:center;
+	font-size:0.7em;
+}
+#market {
+	background:url(images/market.png) no-repeat;
+	margin-left:30px;
+	margin-top:7px;
+	width:442px;
+	height:146px;
+	font-size:37.47px;
+	line-height:1em;
+	color:#a1a0a0;
+	position:relative;
+}
+#market p {
+	margin-top:0px;
+	padding-top:42px;
+	margin-left:15px;
+	
+}
+#market:hover {
+	background:url(images/market-hover.png) no-repeat;
+}
+#video {
+	width:326px;
+	height:196px;
+	margin-left:85px;
+	margin-top:36px;
+}
+#about {
+	width:198px;
+	height:53px;
+	float:right;
+	margin: 50px 70px 0 80px;
+	padding:0px;
+	
+}
+#about h1{
+	margin:-2px 0 0 28px;
+	padding:0px 0 0 0;
+	font-size:28px;
+	
+}
+.middle {
+	width:981px;
+	margin-left: auto;
+  	margin-right: auto
+}
+</style>
+</head>
 
-      h1 {
-        font-size: 28px;
-        color: #000;
-      }
-
-      a  {color: #03c}
-      a:hover {
-        background-color: #03c;
-        color: white;
-        text-decoration: none;
-      }
-
-
-      #page {
-        background-color: #f0f0f0;
-        width: 750px;
-        margin: 0;
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      #content {
-        float: left;
-        background-color: white;
-        border: 3px solid #aaa;
-        border-top: none;
-        padding: 25px;
-        width: 500px;
-      }
-
-      #sidebar {
-        float: right;
-        width: 175px;
-      }
-
-      #footer {
-        clear: both;
-      }
-
-      #header, #about, #getting-started {
-        padding-left: 75px;
-        padding-right: 30px;
-      }
-
-
-      #header {
-        background-image: url("/assets/rails.png");
-        background-repeat: no-repeat;
-        background-position: top left;
-        height: 64px;
-      }
-      #header h1, #header h2 {margin: 0}
-      #header h2 {
-        color: #888;
-        font-weight: normal;
-        font-size: 16px;
-      }
-
-
-      #about h3 {
-        margin: 0;
-        margin-bottom: 10px;
-        font-size: 14px;
-      }
-
-      #about-content {
-        background-color: #ffd;
-        border: 1px solid #fc0;
-        margin-left: -55px;
-        margin-right: -10px;
-      }
-      #about-content table {
-        margin-top: 10px;
-        margin-bottom: 10px;
-        font-size: 11px;
-        border-collapse: collapse;
-      }
-      #about-content td {
-        padding: 10px;
-        padding-top: 3px;
-        padding-bottom: 3px;
-      }
-      #about-content td.name  {color: #555}
-      #about-content td.value {color: #000}
-
-      #about-content ul {
-        padding: 0;
-        list-style-type: none;
-      }
-
-      #about-content.failure {
-        background-color: #fcc;
-        border: 1px solid #f00;
-      }
-      #about-content.failure p {
-        margin: 0;
-        padding: 10px;
-      }
-
-
-      #getting-started {
-        border-top: 1px solid #ccc;
-        margin-top: 25px;
-        padding-top: 15px;
-      }
-      #getting-started h1 {
-        margin: 0;
-        font-size: 20px;
-      }
-      #getting-started h2 {
-        margin: 0;
-        font-size: 14px;
-        font-weight: normal;
-        color: #333;
-        margin-bottom: 25px;
-      }
-      #getting-started ol {
-        margin-left: 0;
-        padding-left: 0;
-      }
-      #getting-started li {
-        font-size: 18px;
-        color: #888;
-        margin-bottom: 25px;
-      }
-      #getting-started li h2 {
-        margin: 0;
-        font-weight: normal;
-        font-size: 18px;
-        color: #333;
-      }
-      #getting-started li p {
-        color: #555;
-        font-size: 13px;
-      }
-
-
-      #sidebar ul {
-        margin-left: 0;
-        padding-left: 0;
-      }
-      #sidebar ul h3 {
-        margin-top: 25px;
-        font-size: 16px;
-        padding-bottom: 10px;
-        border-bottom: 1px solid #ccc;
-      }
-      #sidebar li {
-        list-style-type: none;
-      }
-      #sidebar ul.links li {
-        margin-bottom: 5px;
-      }
-
-      .filename {
-        font-style: italic;
-      }
-    </style>
-    <script type="text/javascript">
-      function about() {
-        info = document.getElementById('about-content');
-        if (window.XMLHttpRequest)
-          { xhr = new XMLHttpRequest(); }
-        else
-          { xhr = new ActiveXObject("Microsoft.XMLHTTP"); }
-        xhr.open("GET","rails/info/properties",false);
-        xhr.send("");
-        info.innerHTML = xhr.responseText;
-        info.style.display = 'block'
-      }
-    </script>
-  </head>
-  <body>
-    <div id="page">
-      <div id="sidebar">
-        <ul id="sidebar-items">
-          <li>
-            <h3>Browse the documentation</h3>
-            <ul class="links">
-              <li><a href="http://guides.rubyonrails.org/">Rails Guides</a></li>
-              <li><a href="http://api.rubyonrails.org/">Rails API</a></li>
-              <li><a href="http://www.ruby-doc.org/core/">Ruby core</a></li>
-              <li><a href="http://www.ruby-doc.org/stdlib/">Ruby standard library</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-
-      <div id="content">
-        <div id="header">
-          <h1>Welcome aboard</h1>
-          <h2>You&rsquo;re riding Ruby on Rails!</h2>
-        </div>
-
-        <div id="about">
-          <h3><a href="rails/info/properties" onclick="about(); return false">About your application&rsquo;s environment</a></h3>
-          <div id="about-content" style="display: none"></div>
-        </div>
-
-        <div id="getting-started">
-          <h1>Getting started</h1>
-          <h2>Here&rsquo;s how to get rolling:</h2>
-
-          <ol>
-            <li>
-              <h2>Use <code>rails generate</code> to create your models and controllers</h2>
-              <p>To see all available options, run it without parameters.</p>
-            </li>
-
-            <li>
-              <h2>Set up a default route and remove <span class="filename">public/index.html</span></h2>
-              <p>Routes are set up in <span class="filename">config/routes.rb</span>.</p>
-            </li>
-
-            <li>
-              <h2>Create your database</h2>
-              <p>Run <code>rake db:create</code> to create your database. If you're not using SQLite (the default), edit <span class="filename">config/database.yml</span> with your username and password.</p>
-            </li>
-          </ol>
+<body onload="resize()" onresize="resize()">
+    <div id="header-bg">
+        <div id="header" class="middle">
+            <div id="about">
+                <a href="about.html"><h1>About</h1></a>
+            </div>
+           <h1 class="active" style="color:#b1cc47;"> <a href="index.html">To<span style="font-size:65px">Do</span>Me </a></h1>   
         </div>
       </div>
-
-      <div id="footer">&nbsp;</div>
+    <div id="wrapper" class="middle">
+    	<div id="pen">
+        </div>
+        <div id="left">
+            <h1>How It Works:</h1>
+            <ol>
+                <li>Do Step 1</li>
+                <li>Do Step 2</li>
+                <li>Do Step 3</li>
+            </ol>
+        </div>
+        <div id="right">
+        	<div id="market">
+           <p>
+            	<span style="font-size:30px; line-height: 0px;">
+                	Get it now at the...
+                </span><br />
+                <a href="https://market.android.com/details?id=com.mojang.minecraftpe&feature=featured-apps#?t=W251bGwsMSwyLDIwMywiY29tLm1vamFuZy5taW5lY3JhZnRwZSJd">
+                    <span style="color:#a1a0a0;">
+                        Android 
+                    </span>
+                    <span style="color:#b1cc47;">
+                        Marketplace
+                    </span>
+                	
+                </a>
+			</p>
+                </div>
+            <div id="video">
+            	<iframe width="326" height="196" src="http://www.youtube.com/embed/grCTXGW3sxQ" frameborder="0" allowfullscreen>
+                </iframe>
+            </div>
+        </div>
     </div>
-  </body>
+    <div id="bar">
+        <div class="middle">
+        	Site Design by <u><a href="http://users.ecs.soton.ac.uk/agb2g10/">Alex Baker</a></u>
+        </div>
+    </div>
+    <div id="footer">
+    	<div class="middle">
+        	Proin ut quam eros. Donec sed lobortis diam. Nulla nec odio lacus. Quisque porttitor egestas dolor in placerat. Nunc vehicula dapibus ipsum. Duis venenatis risus non nunc fermentum dapibus.
+        </div>
+    </div>
+</body>
 </html>
