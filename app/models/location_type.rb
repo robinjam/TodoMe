@@ -3,7 +3,7 @@ class LocationType < ActiveRecord::Base
   has_many :tags, :through =>:taggings
   has_many :locations, :dependent => :nullify
   
-  attr_accessible :name
+  attr_accessible :name, :description
 
   validates_presence_of :name
 end
