@@ -11,11 +11,14 @@ function resize() {
 if($(window).height() > 936) {
 	$("#footer").css("height", (document.documentElement.clientHeight - 897) + "px");
 } else {
-	$("#footer").css("height", "39px");
+	$("#footer").css("height", "130px");
 } 
 }
 </script>
 <style type="text/css">
+.social {
+	margin:0 20px;
+}
 a {
 	text-decoration:none;
 	color: #FDFDFD;
@@ -39,7 +42,7 @@ body {
 	padding-left:50px;
 	color:#FFF;
 	margin: 0 auto;
-	width: 931px;
+	width: 971px;
 	height:118px;
 	background:url(images/logo.png) no-repeat center;
 }
@@ -119,8 +122,8 @@ body {
 	background: url(images/pen.png) no-repeat;
 	width:50px;
 	height: 361px;
-	margin-left:-20px;
-	margin-top:100px;
+	margin-left:-10px;
+	margin-top:160px;
 }
 #bar {
 	height:20px;
@@ -240,7 +243,7 @@ body {
              <div class="person">
             	<div class="pic">
                 	<img src="images/james.jpg" height="145" width="145" />
-                    <p>Robinjam</p>
+                    <p>RobinJam</p>
                 </div>
 				<p><b>James Robinson</b></p>
 				<p>Server Monkey</p>
@@ -248,12 +251,12 @@ body {
             </div>
              <div class="person">
             	<div class="pic">
-                	<img src="images/alex.jpg" height="145" width="145" />
+                	<img src="images/alex-b.png" height="145" width="145" />
                     <p>XanderLite</p>
                 </div>
 				<p><b>Alex Baker</b></p>
 				<p>Web Guru</p>
-                <p>"Proin ut quam eros. Donec sed lobortis diam. Nulla nec odio lacus. Quisque porttitor egestas dolor in placerat. Nunc vehicula dapibus ipsum. Duis venenatis risus non nunc fermentum dapibus."</p>
+                <p>"Or we could play minecraft..."</p>
             </div>
         </div>
     </div>
@@ -264,7 +267,9 @@ body {
     </div>
     <div id="footer">
     	<div class="middle">
-        	Proin ut quam eros. Donec sed lobortis diam. Nulla nec odio lacus. Quisque porttitor egestas dolor in placerat. Nunc vehicula dapibus ipsum. Duis venenatis risus non nunc fermentum dapibus.
+        	<p style="font-size:1.2em"><a class="social" href="http://www.facebook.com/pages/ToDoMe/191036637637602#!/pages/ToDoMe/191036637637602"><img src="images/facebook.png" /> Facebook</a> <a class="social" href="http://twitter.com/#!/todomeandroid"><img src="images/twitter.png" /> Twitter</a> <a class="social" href="http://www.youtube.com/user/ToDoMeApp"><img src="images/youtube.png" /> YouTube</a>  <a class="social" href="https://joindiaspora.com/u/todome"><img src="images/diaspora.png" /> Diaspora</a>
+            </p>
+        	<p>Icons By <a href="http://theg-force.deviantart.com/art/Social-Icons-hand-drawned-109467069">~TheG-Force</a> & <a href="http://creativekaizen.deviantart.com/art/Diaspora-Icon-Set-257241499">~CreativeKaizen</a></p>
         </div>
     </div>
 </body>
